@@ -43,6 +43,6 @@ return require('packer').startup(function(use)
 	  'nvim-lualine/lualine.nvim',
   }
 
-  use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-  use 'romgrk/barbar.nvim'
+  use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
+  use {'romgrk/barbar.nvim'}
 end)
