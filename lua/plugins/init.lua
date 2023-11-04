@@ -1,2 +1,2 @@
 require("packer")
---require("telescope")
+require("telescope")

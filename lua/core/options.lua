@@ -64,3 +64,8 @@ opt.updatetime = 250        -- ms to wait for trigger an event
 -- Autocomplete
 -----------------------------------------------------------
 opt.completeopt = 'menuone,noinsert,noselect'
+
+
+-- netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
