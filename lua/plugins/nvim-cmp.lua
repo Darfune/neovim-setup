@@ -1,7 +1,7 @@
 -- luasnip setup
 local luasnip = require 'luasnip'
 local lspkind = require('lspkind')
-
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -12,8 +12,8 @@ cmp.setup {
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
-		['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+		['<C-b>'] = cmp.mapping.scroll_docs(-4), -- Up
+		['<C-f>'] = cmp.mapping.scroll_docs(4), -- Down
 		-- C-b (back) C-f (forward) for snippet placeholder navigation.
 		['<C-Space>'] = cmp.mapping.complete(),
 		['<CR>'] = cmp.mapping.confirm {

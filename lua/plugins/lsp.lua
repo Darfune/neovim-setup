@@ -14,11 +14,13 @@ local on_attach = function(_, _)
 	set('n', 'K', vim.lsp.buf.hover, {})
 end
 
-require('lspconfig').lua_ls.setup{on_attach = on_attach}
-require('lspconfig').clangd.setup{on_attach = on_attach}
-require('lspconfig').gopls.setup{on_attach = on_attach}
-require('lspconfig').kotlin_language_server.setup{on_attach = on_attach}
-require('lspconfig').pyright.setup{on_attach = on_attach}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require('lspconfig').lua_ls.setup{on_attach = on_attach, capabilities = capabilities}
+require('lspconfig').clangd.setup{on_attach = on_attach, capabilities = capabilities}
+require('lspconfig').gopls.setup{on_attach = on_attach, capabilities = capabilities}
+require('lspconfig').kotlin_language_server.setup{on_attach = on_attach, capabilities = capabilities}
+require('lspconfig').pyright.setup{on_attach = on_attach, capabilities = capabilities}
 --[[
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
