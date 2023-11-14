@@ -1,8 +1,12 @@
 local opt = vim.opt
+local g = vim.g
 
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
+
+-- Show commands
+opt.showcmd = true
 
 -- Mouse settings
 opt.mouse = 'a'
