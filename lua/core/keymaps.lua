@@ -12,10 +12,13 @@ map('n', '<leader>h',':nohlsearch<CR>')
 -- Expore main directory
 map("n","<leader>pv",vim.cmd.Ex)
 
---api_map("n", '<M-1>', ':NvimTreeToggle<CR>', opts)
 
 map('n', '<c-h>', ':wincmd h<CR>')
 map('n', '<c-l>', ':wincmd l<CR>')
+
+-- Use for toggleterm plugin
+map('n', '<C-j>', [[<Cmd>wincmd j<CR>]], opts) -- Move down a buffer
+map('n', '<C-k>', [[<Cmd>wincmd k<CR>]], opts) -- Move down a buffer
 
 
 map('v', "J", ":m '>+1<CR>gv=gv") -- Move highlighted lines down
