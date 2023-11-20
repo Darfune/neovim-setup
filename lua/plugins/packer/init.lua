@@ -71,6 +71,24 @@ return require('packer').startup(function(use)
 	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()
 	end}
+
+	use {"olexsmir/gopher.nvim",
+	ft = "go",
+	config = function (_, opts)
+		require("gopher").setup(opts)
+		-- code
+	end,
+	build = function ()
+		vim.cmd [[silent! GoInstallDeps]]
+	end,
+}
+use "nvim-lua/plenary.nvim"
+use {"jose-elias-alvarez/null-ls.nvim",
+ft = "go",
+opts = function ()
+	return require "custom.configs.null-ls"
+end,
+}
 end)
 
 
