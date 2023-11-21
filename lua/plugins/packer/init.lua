@@ -82,7 +82,7 @@ return require('packer').startup(function(use)
 		vim.cmd [[silent! GoInstallDeps]]
 	end,
 }
-use "nvim-lua/plenary.nvim"
+use {"nvim-lua/plenary.nvim"}
 use {"jose-elias-alvarez/null-ls.nvim",
 ft = "go",
 opts = function ()
