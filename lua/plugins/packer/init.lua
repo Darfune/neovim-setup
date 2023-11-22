@@ -20,13 +20,13 @@ return require('packer').startup(function(use)
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-	use 'nvim-tree/nvim-web-devicons'
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional
-		},
-	}
+	-- use 'nvim-tree/nvim-web-devicons'
+	-- use {
+	-- 	'nvim-tree/nvim-tree.lua',
+	-- 	requires = {
+	-- 		'nvim-tree/nvim-web-devicons', -- optional
+	-- 	},
+	-- }
 
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -73,22 +73,33 @@ return require('packer').startup(function(use)
 	end}
 
 	use {"olexsmir/gopher.nvim",
-	ft = "go",
-	config = function (_, opts)
-		require("gopher").setup(opts)
-		-- code
-	end,
-	build = function ()
-		vim.cmd [[silent! GoInstallDeps]]
-	end,
-}
-use {"nvim-lua/plenary.nvim"}
-use {"jose-elias-alvarez/null-ls.nvim",
-ft = "go",
-opts = function ()
-	return require "custom.configs.null-ls"
-end,
-}
+		ft = "go",
+		config = function (_, opts)
+			require("gopher").setup(opts)
+			-- code
+		end,
+		build = function ()
+			vim.cmd [[silent! GoInstallDeps]]
+		end,
+	}
+	use {"nvim-lua/plenary.nvim"}
+	use {"jose-elias-alvarez/null-ls.nvim",
+		ft = "go",
+		opts = function ()
+			return require "custom.configs.null-ls"
+		end,
+	}
+
+	use {
+	  "nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+		  "nvim-lua/plenary.nvim",
+		  "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		  "MunifTanjim/nui.nvim",
+		  "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		}
+	  }
 end)
 
 

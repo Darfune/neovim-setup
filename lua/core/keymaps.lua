@@ -29,6 +29,12 @@ map('n', 'J', 'mzJ`z') -- Don't change cursor position
 map('n', '<C-d>', '<C-d>zz') -- Page down with the cursor at the center
 map('n', '<C-u>', '<C-u>zz') -- Page up with the cursor at the center
 
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
+-- paste over currently selected text without yanking it
+map("v", "p", '"_dp')
+map("v", "P", '"_dP')
 map('x', '<leader>p', "\"_dP")
 
