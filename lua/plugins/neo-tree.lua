@@ -10,4 +10,4 @@ require("neo-tree").setup({
   },
 	close_if_last_window = false,
 })
-vim.keymap.set('n','<M-1>','<Cmd>Neotree<CR>')
+vim.keymap.set('n','<M-1>','<Cmd>Neotree toggle<CR>')
