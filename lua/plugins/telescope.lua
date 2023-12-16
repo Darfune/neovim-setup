@@ -1,15 +1,14 @@
 local map = vim.keymap.set
 
-local config = function ()
+local config = function()
 	local telescope = require("telescope")
 	telescope.setup({
 		defaults = {
 			mappings = {
-				i = {
-				},
+				i = {},
 			},
 		},
-			pickers = {
+		pickers = {
 			find_files = {
 				previewer = true,
 				hidden = true,
@@ -36,6 +35,6 @@ return {
 		map("n", "<leader>ff", ":Telescope find_files<CR>"),
 		map("n", "<leader>fa", ":Telescope<CR>"),
 		map("n", "<leader>fg", ":Telescope live_grep<CR>"),
-		map("n", "<leader>fb", ":Telescope buffers<CR>"),	
+		map("n", "<leader>fb", ":Telescope buffers<CR>"),
 	},
 }
