@@ -36,6 +36,6 @@ end
 
 return {
 	"nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  config = config
+	lazy = false,
+	config = config,
 }
