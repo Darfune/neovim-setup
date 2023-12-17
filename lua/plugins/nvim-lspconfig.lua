@@ -171,6 +171,20 @@ local config = function()
 	---@prettierd
 
 	-----------------------------------------------------------
+	-- C & C++ lsp setup
+	-----------------------------------------------------------
+	-- LSP
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+	-- Linter
+	local cpplint = require("efmls-configs.linters.cpplint")
+	-- Formatter
+	local clang_format = require('efmls-configs.formatters.clang_format') 
+
+
+	-----------------------------------------------------------
 	-- Configuration of efm server
 	-----------------------------------------------------------
 	lspconfig.efm.setup({
@@ -182,6 +196,8 @@ local config = function()
 			"css",
 			"javascript",
 			"json",
+			"c",
+			"cpp"
 		},
 		init_options = {
 			documentFormatting = true,
@@ -200,6 +216,8 @@ local config = function()
 				css = { stylelint, prettierd },
 				javascript = { eslint_d, prettierd },
 				json = { eslint_d, prettierd },
+				c = { cpplint, clang_format },
+				cpp = { cpplint, clang_format },
 			},
 		},
 	})
