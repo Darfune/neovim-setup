@@ -10,7 +10,7 @@ local config = function()
 	local diagnostic_signs = { Error = " ", Warn = " ", Hint = "󰛨 ", Info = "" }
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
-		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 	end
 
 	local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -114,7 +114,7 @@ local config = function()
 	-- Linter
 	local revive = require("efmls-configs.linters.go_revive")
 	-- Formatter
-	local goimports = require("efmls-configs.formatters.goimports")
+	local gofumpt = require("efmls-configs.formatters.gofumpt")
 
 	-----------------------------------------------------------
 	-- Emmet  lsp setup (javascript, html, css and variants
@@ -181,8 +181,7 @@ local config = function()
 	-- Linter
 	local cpplint = require("efmls-configs.linters.cpplint")
 	-- Formatter
-	local clang_format = require('efmls-configs.formatters.clang_format') 
-
+	local clang_format = require("efmls-configs.formatters.clang_format")
 
 	-----------------------------------------------------------
 	-- Configuration of efm server
@@ -197,7 +196,7 @@ local config = function()
 			"javascript",
 			"json",
 			"c",
-			"cpp"
+			"cpp",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -211,7 +210,7 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { flake8, black },
-				go = { revive, goimports },
+				go = { revive, gofumpt },
 				html = { djlint, prettierd },
 				css = { stylelint, prettierd },
 				javascript = { eslint_d, prettierd },
