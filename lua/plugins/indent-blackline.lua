@@ -3,8 +3,8 @@ local config = function()
 		"RainbowCyan",
 		"RainbowViolet",
 		"RainbowGreen",
-		"RainbowBlue",
 		"RainbowOrange",
+		"RainbowBlue",
 		"RainbowYellow",
 		"RainbowRed",
 	}
