@@ -92,6 +92,10 @@ local config = function()
 					gc_details = true,
 					test = true,
 					tidy = true,
+					upgrade_dependency = true,
+					vendor = true,
+					regenerate_cgo = true,
+					run_govulncheck = true,
 				},
 				usePlaceholders = true,
 				completeUnimported = true,
@@ -103,6 +107,7 @@ local config = function()
 				gofumpt = true,
 				buildFlags = { "-tags", "integration" },
 				expandWorkspaceToModule = true,
+				semanticTokens = true,
 				hints = {
 					assignVariableTypes = true,
 					constantValues = true,
@@ -115,6 +120,16 @@ local config = function()
 	local revive = require("efmls-configs.linters.go_revive")
 	-- Formatter
 	local gofumpt = require("efmls-configs.formatters.gofumpt")
+
+	-----------------------------------------------------------
+	-- Templ lsp setup
+	-----------------------------------------------------------
+	-- LSP
+	lspconfig.templ.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "gotmpl" },
+	})
 
 	-----------------------------------------------------------
 	-- Emmet  lsp setup (javascript, html, css and variants
