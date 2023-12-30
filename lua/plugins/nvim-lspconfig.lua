@@ -74,6 +74,7 @@ local config = function()
 	lspconfig.gopls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+		filetypes = { "go", "gomod", "gosum", "gowork" },
 		settings = {
 			gopls = {
 				analyses = {
@@ -212,6 +213,7 @@ local config = function()
 			"json",
 			"c",
 			"cpp",
+			"gotempl"
 		},
 		init_options = {
 			documentFormatting = true,
@@ -226,6 +228,7 @@ local config = function()
 				lua = { luacheck, stylua },
 				python = { flake8, black },
 				go = { revive, gofumpt },
+				gotempl = { djlint, prettierd },
 				html = { djlint, prettierd },
 				css = { stylelint, prettierd },
 				javascript = { eslint_d, prettierd },

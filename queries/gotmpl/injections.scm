@@ -1,1 +1,1 @@
-(text) @yaml
+(text) @html
